@@ -1,6 +1,6 @@
 {
   "name": "jsonwebtoken",
-  "version": "9.0.2",
+  "version": "9.0.3",
   "description": "JSON Web Token implementation (symmetric and asymmetric)",
   "main": "index.js",
   "nyc": {
@@ -21,7 +21,9 @@
   "scripts": {
     "lint": "eslint .",
     "coverage": "nyc mocha --use_strict",
-    "test": "npm run lint && npm run coverage && cost-of-modules"
+    "test": "mocha",
+    "prepare": "husky",
+    "update-changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,7 @@
     "url": "https://github.com/auth0/node-jsonwebtoken/issues"
   },
   "dependencies": {
-    "jws": "^3.2.2",
+    "jws": "^4.0.1",
     "lodash.includes": "^4.3.0",
     "lodash.isboolean": "^3.0.3",
     "lodash.isinteger": "^4.0.4",
@@ -48,14 +50,19 @@
     "semver": "^7.5.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
+    "@semantic-release/exec": "^7.0.3",
     "atob": "^2.1.2",
     "chai": "^4.1.2",
-    "conventional-changelog": "~1.1.0",
-    "cost-of-modules": "^1.0.1",
+    "conventional-changelog": "^7.2.1",
+    "conventional-changelog-conventionalcommits": "^9.3.0",
     "eslint": "^4.19.1",
+    "husky": "^9.1.7",
     "mocha": "^5.2.0",
     "nsp": "^2.6.2",
     "nyc": "^11.9.0",
+    "semantic-release": "^25.0.2",
     "sinon": "^6.0.0"
   },
   "engines": {
